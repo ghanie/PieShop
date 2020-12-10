@@ -6,7 +6,7 @@ using PieShopWebsite.Models;
 
 namespace PieShopWebsite.Services
 {
-    public class MockCategoryRepository : ICategoryRepository
+    /*public class MockCategoryRepository : ICategoryRepository
     {
         public IEnumerable<Category> AllCategories =>
             new List<Category>
@@ -15,5 +15,5 @@ namespace PieShopWebsite.Services
                 new Category{CategoryId=2, CategoryName="Cheese cakes", Description="Cheesy all the way"},
                 new Category{CategoryId=3, CategoryName="Seasonal pies", Description="Get in the mood for a seasonal pie"}
             };
-    }
+    }*/
 }

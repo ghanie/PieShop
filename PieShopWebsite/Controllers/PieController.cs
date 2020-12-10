@@ -19,12 +19,24 @@ namespace PieShopWebsite.Controllers
         public IActionResult List()
         {
             //return View(_pieRepository.AllPies);
-            PiesViewModel piesViewModel = new PiesViewModel();
-            piesViewModel.Pies = _pieRepository.AllPies;
+            PiesViewModel piesViewModel = new PiesViewModel
+            {
+                Pies = _pieRepository.AllPies, CurrentCategory = "Cheese cakes"
+            };
 
-            piesViewModel.CurrentCategory = "Cheese cakes";
             return View(piesViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieById(id);
+            if (pie == null)
+                return NotFound();
+
+            return View(pie);
+        }
+
+
     }
 }
 

@@ -6,7 +6,7 @@ using PieShopWebsite.Models;
 
 namespace PieShopWebsite.Services
 {
-    public class MockPieRepository : IPieRepository
+    /*public class MockPieRepository : IPieRepository
     {
         private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
 
@@ -25,5 +25,5 @@ namespace PieShopWebsite.Services
         {
             return AllPies.FirstOrDefault(p => p.PieId == pieId);
         }
-    }
+    }*/
 }
