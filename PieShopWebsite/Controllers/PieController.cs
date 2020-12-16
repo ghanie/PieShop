@@ -19,7 +19,7 @@ namespace PieShopWebsite.Controllers
         public IActionResult List()
         {
             //return View(_pieRepository.AllPies);
-            PiesViewModel piesViewModel = new PiesViewModel
+            var piesViewModel = new PiesViewModel
             {
                 Pies = _pieRepository.AllPies, CurrentCategory = "Cheese cakes"
             };

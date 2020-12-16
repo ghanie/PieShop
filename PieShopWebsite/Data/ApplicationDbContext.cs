@@ -8,6 +8,8 @@ namespace PieShopWebsite.Data
         public DbSet<Pie> Pies { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
         // Constructor to be able to add ApplicationDbContext to Services  
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

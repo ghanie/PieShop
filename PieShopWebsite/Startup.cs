@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PieShopWebsite.Data;
+using PieShopWebsite.Models;
 using PieShopWebsite.Services;
 
 namespace PieShopWebsite
@@ -33,6 +34,11 @@ namespace PieShopWebsite
             // Register Services IPieRepo and ICategoryRepo 
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            // 
+            services.AddScoped<ShoppingCart>(ShoppingCart.GetCart);
+            services.AddHttpContextAccessor();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +52,8 @@ namespace PieShopWebsite
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
