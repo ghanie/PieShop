@@ -43,8 +43,9 @@ namespace PieShopWebsite.Controllers
             {
                 _shoppingCart.AddToCart(selectedPie, 1);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("List","Pie");
         }
+
 
         public RedirectToActionResult RemoveFromShoppingCart(int pieId)
         {
